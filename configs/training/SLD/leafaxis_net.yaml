@@ -1,0 +1,11 @@
+# Training config: model=leafaxis_net, dataset=SLD.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: SLD
+  num_classes: 11
+
+model:
+  arch: leafaxis_net
+  pretrained: true

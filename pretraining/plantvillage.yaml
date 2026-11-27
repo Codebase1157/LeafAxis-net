@@ -1,0 +1,36 @@
+# PlantVillage pre-training configuration for LeafAxis-Net.
+# Applied once and then reused as the starting checkpoint for every sugarcane run.
+
+data:
+  root: ./data_raw/PlantVillage
+  image_size: 224
+  num_classes: 38
+  batch_size: 128
+  num_workers: 8
+
+model:
+  arch: leafaxis_net
+  num_classes: 38
+
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.05
+  betas: [0.9, 0.999]
+
+schedule:
+  epochs: 100
+  warmup_epochs: 5
+  cosine_eta_min: 1.0e-6
+
+augment:
+  random_resized_crop: [0.7, 1.0]
+  horizontal_flip: 0.5
+  color_jitter: [0.1, 0.1, 0.1]
+  mixup_alpha: 0.2
+
+checkpoint:
+  save_path: ./checkpoints/plantvillage_leafaxis.pth
+  save_every: 20
+
+seed: 0

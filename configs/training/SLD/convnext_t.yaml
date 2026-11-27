@@ -1,0 +1,11 @@
+# Training config: model=convnext_t, dataset=SLD.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: SLD
+  num_classes: 11
+
+model:
+  arch: convnext_t
+  pretrained: true

@@ -1,0 +1,3400 @@
+{
+  "paper": "LeafAxis-Net: A Multi-Axis Attention CNN-Transformer Network for Sugarcane Leaf Disease Classification under a Unified Leakage-Controlled Protocol",
+  "schema_version": "1.0",
+  "notes": "sha256 and bytes fields are populated by scripts/hash_artifacts.py from the file bytes. A null sha256 means the file does not exist on disk yet and the generating script must be run. No hash in this file is hand-written.",
+  "tables": {
+    "table_5": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S1 (components row)",
+      "inputs": [
+        "manifests/main_manifest.csv"
+      ]
+    },
+    "table_7": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S3 (mean/sd)",
+      "inputs": [
+        "predictions/*.npz"
+      ]
+    },
+    "table_8": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "ablation",
+      "inputs": [
+        "predictions/ablation/*.npz"
+      ]
+    },
+    "table_9": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "design_controls",
+      "inputs": [
+        "predictions/controls/*.npz"
+      ]
+    },
+    "table_10": {
+      "source_script": "scripts/run_statistics.py",
+      "source_fn": "block_a + block_b + block_c",
+      "inputs": [
+        "predictions/*.npz",
+        "predictions/resplit_*/*.npz"
+      ]
+    },
+    "table_11": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "transfer",
+      "inputs": [
+        "predictions/transfer/*.npz"
+      ]
+    },
+    "table_12": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "transfer_per_class",
+      "inputs": [
+        "predictions/transfer/*.npz"
+      ]
+    },
+    "table_13": {
+      "source_script": "scripts/make_profiler.py",
+      "source_fn": "profile",
+      "inputs": [
+        "checkpoints/*.pth"
+      ]
+    },
+    "supp_S1": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S1",
+      "inputs": [
+        "manifests/main_manifest.csv",
+        "manifests/resplit_*.csv"
+      ]
+    },
+    "supp_S2": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S2",
+      "inputs": [
+        "predictions/leafaxis_net_*.npz"
+      ]
+    },
+    "supp_S3": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S3",
+      "inputs": [
+        "predictions/*.npz"
+      ]
+    },
+    "supp_S4": {
+      "source_script": "scripts/make_tables.py",
+      "source_fn": "supp_S4",
+      "inputs": [
+        "predictions/transfer/*.npz"
+      ]
+    }
+  },
+  "figures": {
+    "fig_2": {
+      "source_script": "scripts/make_figures.py",
+      "source_fn": "fig2_confusion_and_roc"
+    },
+    "fig_3": {
+      "source_script": "scripts/make_figures.py",
+      "source_fn": "fig3_layer_wise"
+    },
+    "fig_7": {
+      "source_script": "scripts/make_figures.py",
+      "source_fn": "fig7_misclassifications"
+    },
+    "fig_8": {
+      "source_script": "scripts/make_figures.py",
+      "source_fn": "fig8_shared_categories"
+    },
+    "fig_9": {
+      "source_script": "scripts/make_figures.py",
+      "source_fn": "fig9_tsne"
+    }
+  },
+  "artifacts": [
+    {
+      "id": "main_manifest",
+      "path": "manifests/main_manifest.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "resplit_100",
+      "path": "manifests/resplit_100.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "resplit_200",
+      "path": "manifests/resplit_200.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "resplit_300",
+      "path": "manifests/resplit_300.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "resplit_400",
+      "path": "manifests/resplit_400.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "resplit_500",
+      "path": "manifests/resplit_500.csv",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "plantvillage_checkpoint",
+      "path": "checkpoints/plantvillage_leafaxis.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_SLD_seed0",
+      "path": "checkpoints/resnet50_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_SLD_seed0",
+      "path": "predictions/resnet50_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_SLD_seed0",
+      "path": "logs/resnet50_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_SLD_seed1",
+      "path": "checkpoints/resnet50_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_SLD_seed1",
+      "path": "predictions/resnet50_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_SLD_seed1",
+      "path": "logs/resnet50_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_SLD_seed2",
+      "path": "checkpoints/resnet50_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_SLD_seed2",
+      "path": "predictions/resnet50_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_SLD_seed2",
+      "path": "logs/resnet50_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_SLD_seed3",
+      "path": "checkpoints/resnet50_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_SLD_seed3",
+      "path": "predictions/resnet50_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_SLD_seed3",
+      "path": "logs/resnet50_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_SLD_seed4",
+      "path": "checkpoints/resnet50_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_SLD_seed4",
+      "path": "predictions/resnet50_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_SLD_seed4",
+      "path": "logs/resnet50_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_DK_seed0",
+      "path": "checkpoints/resnet50_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_DK_seed0",
+      "path": "predictions/resnet50_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_DK_seed0",
+      "path": "logs/resnet50_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_DK_seed1",
+      "path": "checkpoints/resnet50_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_DK_seed1",
+      "path": "predictions/resnet50_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_DK_seed1",
+      "path": "logs/resnet50_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_DK_seed2",
+      "path": "checkpoints/resnet50_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_DK_seed2",
+      "path": "predictions/resnet50_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_DK_seed2",
+      "path": "logs/resnet50_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_DK_seed3",
+      "path": "checkpoints/resnet50_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_DK_seed3",
+      "path": "predictions/resnet50_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_DK_seed3",
+      "path": "logs/resnet50_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_DK_seed4",
+      "path": "checkpoints/resnet50_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_DK_seed4",
+      "path": "predictions/resnet50_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_DK_seed4",
+      "path": "logs/resnet50_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_BD_seed0",
+      "path": "checkpoints/resnet50_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_BD_seed0",
+      "path": "predictions/resnet50_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_BD_seed0",
+      "path": "logs/resnet50_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_BD_seed1",
+      "path": "checkpoints/resnet50_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_BD_seed1",
+      "path": "predictions/resnet50_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_BD_seed1",
+      "path": "logs/resnet50_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_BD_seed2",
+      "path": "checkpoints/resnet50_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_BD_seed2",
+      "path": "predictions/resnet50_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_BD_seed2",
+      "path": "logs/resnet50_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_BD_seed3",
+      "path": "checkpoints/resnet50_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_BD_seed3",
+      "path": "predictions/resnet50_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_BD_seed3",
+      "path": "logs/resnet50_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_resnet50_BD_seed4",
+      "path": "checkpoints/resnet50_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_resnet50_BD_seed4",
+      "path": "predictions/resnet50_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_resnet50_BD_seed4",
+      "path": "logs/resnet50_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_SLD_seed0",
+      "path": "checkpoints/efficientnet_b3_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_SLD_seed0",
+      "path": "predictions/efficientnet_b3_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_SLD_seed0",
+      "path": "logs/efficientnet_b3_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_SLD_seed1",
+      "path": "checkpoints/efficientnet_b3_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_SLD_seed1",
+      "path": "predictions/efficientnet_b3_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_SLD_seed1",
+      "path": "logs/efficientnet_b3_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_SLD_seed2",
+      "path": "checkpoints/efficientnet_b3_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_SLD_seed2",
+      "path": "predictions/efficientnet_b3_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_SLD_seed2",
+      "path": "logs/efficientnet_b3_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_SLD_seed3",
+      "path": "checkpoints/efficientnet_b3_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_SLD_seed3",
+      "path": "predictions/efficientnet_b3_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_SLD_seed3",
+      "path": "logs/efficientnet_b3_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_SLD_seed4",
+      "path": "checkpoints/efficientnet_b3_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_SLD_seed4",
+      "path": "predictions/efficientnet_b3_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_SLD_seed4",
+      "path": "logs/efficientnet_b3_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_DK_seed0",
+      "path": "checkpoints/efficientnet_b3_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_DK_seed0",
+      "path": "predictions/efficientnet_b3_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_DK_seed0",
+      "path": "logs/efficientnet_b3_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_DK_seed1",
+      "path": "checkpoints/efficientnet_b3_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_DK_seed1",
+      "path": "predictions/efficientnet_b3_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_DK_seed1",
+      "path": "logs/efficientnet_b3_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_DK_seed2",
+      "path": "checkpoints/efficientnet_b3_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_DK_seed2",
+      "path": "predictions/efficientnet_b3_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_DK_seed2",
+      "path": "logs/efficientnet_b3_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_DK_seed3",
+      "path": "checkpoints/efficientnet_b3_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_DK_seed3",
+      "path": "predictions/efficientnet_b3_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_DK_seed3",
+      "path": "logs/efficientnet_b3_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_DK_seed4",
+      "path": "checkpoints/efficientnet_b3_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_DK_seed4",
+      "path": "predictions/efficientnet_b3_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_DK_seed4",
+      "path": "logs/efficientnet_b3_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_BD_seed0",
+      "path": "checkpoints/efficientnet_b3_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_BD_seed0",
+      "path": "predictions/efficientnet_b3_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_BD_seed0",
+      "path": "logs/efficientnet_b3_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_BD_seed1",
+      "path": "checkpoints/efficientnet_b3_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_BD_seed1",
+      "path": "predictions/efficientnet_b3_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_BD_seed1",
+      "path": "logs/efficientnet_b3_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_BD_seed2",
+      "path": "checkpoints/efficientnet_b3_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_BD_seed2",
+      "path": "predictions/efficientnet_b3_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_BD_seed2",
+      "path": "logs/efficientnet_b3_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_BD_seed3",
+      "path": "checkpoints/efficientnet_b3_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_BD_seed3",
+      "path": "predictions/efficientnet_b3_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_BD_seed3",
+      "path": "logs/efficientnet_b3_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientnet_b3_BD_seed4",
+      "path": "checkpoints/efficientnet_b3_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientnet_b3_BD_seed4",
+      "path": "predictions/efficientnet_b3_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientnet_b3_BD_seed4",
+      "path": "logs/efficientnet_b3_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_SLD_seed0",
+      "path": "checkpoints/vit_b_16_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_SLD_seed0",
+      "path": "predictions/vit_b_16_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_SLD_seed0",
+      "path": "logs/vit_b_16_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_SLD_seed1",
+      "path": "checkpoints/vit_b_16_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_SLD_seed1",
+      "path": "predictions/vit_b_16_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_SLD_seed1",
+      "path": "logs/vit_b_16_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_SLD_seed2",
+      "path": "checkpoints/vit_b_16_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_SLD_seed2",
+      "path": "predictions/vit_b_16_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_SLD_seed2",
+      "path": "logs/vit_b_16_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_SLD_seed3",
+      "path": "checkpoints/vit_b_16_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_SLD_seed3",
+      "path": "predictions/vit_b_16_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_SLD_seed3",
+      "path": "logs/vit_b_16_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_SLD_seed4",
+      "path": "checkpoints/vit_b_16_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_SLD_seed4",
+      "path": "predictions/vit_b_16_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_SLD_seed4",
+      "path": "logs/vit_b_16_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_DK_seed0",
+      "path": "checkpoints/vit_b_16_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_DK_seed0",
+      "path": "predictions/vit_b_16_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_DK_seed0",
+      "path": "logs/vit_b_16_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_DK_seed1",
+      "path": "checkpoints/vit_b_16_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_DK_seed1",
+      "path": "predictions/vit_b_16_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_DK_seed1",
+      "path": "logs/vit_b_16_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_DK_seed2",
+      "path": "checkpoints/vit_b_16_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_DK_seed2",
+      "path": "predictions/vit_b_16_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_DK_seed2",
+      "path": "logs/vit_b_16_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_DK_seed3",
+      "path": "checkpoints/vit_b_16_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_DK_seed3",
+      "path": "predictions/vit_b_16_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_DK_seed3",
+      "path": "logs/vit_b_16_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_DK_seed4",
+      "path": "checkpoints/vit_b_16_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_DK_seed4",
+      "path": "predictions/vit_b_16_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_DK_seed4",
+      "path": "logs/vit_b_16_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_BD_seed0",
+      "path": "checkpoints/vit_b_16_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_BD_seed0",
+      "path": "predictions/vit_b_16_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_BD_seed0",
+      "path": "logs/vit_b_16_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_BD_seed1",
+      "path": "checkpoints/vit_b_16_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_BD_seed1",
+      "path": "predictions/vit_b_16_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_BD_seed1",
+      "path": "logs/vit_b_16_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_BD_seed2",
+      "path": "checkpoints/vit_b_16_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_BD_seed2",
+      "path": "predictions/vit_b_16_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_BD_seed2",
+      "path": "logs/vit_b_16_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_BD_seed3",
+      "path": "checkpoints/vit_b_16_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_BD_seed3",
+      "path": "predictions/vit_b_16_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_BD_seed3",
+      "path": "logs/vit_b_16_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_vit_b_16_BD_seed4",
+      "path": "checkpoints/vit_b_16_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_vit_b_16_BD_seed4",
+      "path": "predictions/vit_b_16_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_vit_b_16_BD_seed4",
+      "path": "logs/vit_b_16_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_SLD_seed0",
+      "path": "checkpoints/swin_t_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_SLD_seed0",
+      "path": "predictions/swin_t_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_SLD_seed0",
+      "path": "logs/swin_t_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_SLD_seed1",
+      "path": "checkpoints/swin_t_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_SLD_seed1",
+      "path": "predictions/swin_t_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_SLD_seed1",
+      "path": "logs/swin_t_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_SLD_seed2",
+      "path": "checkpoints/swin_t_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_SLD_seed2",
+      "path": "predictions/swin_t_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_SLD_seed2",
+      "path": "logs/swin_t_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_SLD_seed3",
+      "path": "checkpoints/swin_t_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_SLD_seed3",
+      "path": "predictions/swin_t_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_SLD_seed3",
+      "path": "logs/swin_t_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_SLD_seed4",
+      "path": "checkpoints/swin_t_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_SLD_seed4",
+      "path": "predictions/swin_t_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_SLD_seed4",
+      "path": "logs/swin_t_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_DK_seed0",
+      "path": "checkpoints/swin_t_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_DK_seed0",
+      "path": "predictions/swin_t_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_DK_seed0",
+      "path": "logs/swin_t_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_DK_seed1",
+      "path": "checkpoints/swin_t_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_DK_seed1",
+      "path": "predictions/swin_t_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_DK_seed1",
+      "path": "logs/swin_t_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_DK_seed2",
+      "path": "checkpoints/swin_t_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_DK_seed2",
+      "path": "predictions/swin_t_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_DK_seed2",
+      "path": "logs/swin_t_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_DK_seed3",
+      "path": "checkpoints/swin_t_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_DK_seed3",
+      "path": "predictions/swin_t_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_DK_seed3",
+      "path": "logs/swin_t_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_DK_seed4",
+      "path": "checkpoints/swin_t_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_DK_seed4",
+      "path": "predictions/swin_t_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_DK_seed4",
+      "path": "logs/swin_t_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_BD_seed0",
+      "path": "checkpoints/swin_t_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_BD_seed0",
+      "path": "predictions/swin_t_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_BD_seed0",
+      "path": "logs/swin_t_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_BD_seed1",
+      "path": "checkpoints/swin_t_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_BD_seed1",
+      "path": "predictions/swin_t_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_BD_seed1",
+      "path": "logs/swin_t_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_BD_seed2",
+      "path": "checkpoints/swin_t_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_BD_seed2",
+      "path": "predictions/swin_t_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_BD_seed2",
+      "path": "logs/swin_t_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_BD_seed3",
+      "path": "checkpoints/swin_t_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_BD_seed3",
+      "path": "predictions/swin_t_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_BD_seed3",
+      "path": "logs/swin_t_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_swin_t_BD_seed4",
+      "path": "checkpoints/swin_t_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_swin_t_BD_seed4",
+      "path": "predictions/swin_t_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_swin_t_BD_seed4",
+      "path": "logs/swin_t_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_SLD_seed0",
+      "path": "checkpoints/convnext_t_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_SLD_seed0",
+      "path": "predictions/convnext_t_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_SLD_seed0",
+      "path": "logs/convnext_t_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_SLD_seed1",
+      "path": "checkpoints/convnext_t_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_SLD_seed1",
+      "path": "predictions/convnext_t_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_SLD_seed1",
+      "path": "logs/convnext_t_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_SLD_seed2",
+      "path": "checkpoints/convnext_t_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_SLD_seed2",
+      "path": "predictions/convnext_t_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_SLD_seed2",
+      "path": "logs/convnext_t_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_SLD_seed3",
+      "path": "checkpoints/convnext_t_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_SLD_seed3",
+      "path": "predictions/convnext_t_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_SLD_seed3",
+      "path": "logs/convnext_t_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_SLD_seed4",
+      "path": "checkpoints/convnext_t_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_SLD_seed4",
+      "path": "predictions/convnext_t_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_SLD_seed4",
+      "path": "logs/convnext_t_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_DK_seed0",
+      "path": "checkpoints/convnext_t_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_DK_seed0",
+      "path": "predictions/convnext_t_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_DK_seed0",
+      "path": "logs/convnext_t_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_DK_seed1",
+      "path": "checkpoints/convnext_t_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_DK_seed1",
+      "path": "predictions/convnext_t_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_DK_seed1",
+      "path": "logs/convnext_t_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_DK_seed2",
+      "path": "checkpoints/convnext_t_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_DK_seed2",
+      "path": "predictions/convnext_t_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_DK_seed2",
+      "path": "logs/convnext_t_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_DK_seed3",
+      "path": "checkpoints/convnext_t_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_DK_seed3",
+      "path": "predictions/convnext_t_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_DK_seed3",
+      "path": "logs/convnext_t_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_DK_seed4",
+      "path": "checkpoints/convnext_t_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_DK_seed4",
+      "path": "predictions/convnext_t_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_DK_seed4",
+      "path": "logs/convnext_t_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_BD_seed0",
+      "path": "checkpoints/convnext_t_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_BD_seed0",
+      "path": "predictions/convnext_t_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_BD_seed0",
+      "path": "logs/convnext_t_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_BD_seed1",
+      "path": "checkpoints/convnext_t_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_BD_seed1",
+      "path": "predictions/convnext_t_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_BD_seed1",
+      "path": "logs/convnext_t_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_BD_seed2",
+      "path": "checkpoints/convnext_t_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_BD_seed2",
+      "path": "predictions/convnext_t_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_BD_seed2",
+      "path": "logs/convnext_t_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_BD_seed3",
+      "path": "checkpoints/convnext_t_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_BD_seed3",
+      "path": "predictions/convnext_t_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_BD_seed3",
+      "path": "logs/convnext_t_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_convnext_t_BD_seed4",
+      "path": "checkpoints/convnext_t_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_convnext_t_BD_seed4",
+      "path": "predictions/convnext_t_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_convnext_t_BD_seed4",
+      "path": "logs/convnext_t_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_SLD_seed0",
+      "path": "checkpoints/mobilevit_s_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_SLD_seed0",
+      "path": "predictions/mobilevit_s_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_SLD_seed0",
+      "path": "logs/mobilevit_s_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_SLD_seed1",
+      "path": "checkpoints/mobilevit_s_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_SLD_seed1",
+      "path": "predictions/mobilevit_s_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_SLD_seed1",
+      "path": "logs/mobilevit_s_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_SLD_seed2",
+      "path": "checkpoints/mobilevit_s_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_SLD_seed2",
+      "path": "predictions/mobilevit_s_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_SLD_seed2",
+      "path": "logs/mobilevit_s_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_SLD_seed3",
+      "path": "checkpoints/mobilevit_s_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_SLD_seed3",
+      "path": "predictions/mobilevit_s_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_SLD_seed3",
+      "path": "logs/mobilevit_s_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_SLD_seed4",
+      "path": "checkpoints/mobilevit_s_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_SLD_seed4",
+      "path": "predictions/mobilevit_s_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_SLD_seed4",
+      "path": "logs/mobilevit_s_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_DK_seed0",
+      "path": "checkpoints/mobilevit_s_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_DK_seed0",
+      "path": "predictions/mobilevit_s_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_DK_seed0",
+      "path": "logs/mobilevit_s_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_DK_seed1",
+      "path": "checkpoints/mobilevit_s_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_DK_seed1",
+      "path": "predictions/mobilevit_s_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_DK_seed1",
+      "path": "logs/mobilevit_s_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_DK_seed2",
+      "path": "checkpoints/mobilevit_s_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_DK_seed2",
+      "path": "predictions/mobilevit_s_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_DK_seed2",
+      "path": "logs/mobilevit_s_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_DK_seed3",
+      "path": "checkpoints/mobilevit_s_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_DK_seed3",
+      "path": "predictions/mobilevit_s_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_DK_seed3",
+      "path": "logs/mobilevit_s_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_DK_seed4",
+      "path": "checkpoints/mobilevit_s_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_DK_seed4",
+      "path": "predictions/mobilevit_s_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_DK_seed4",
+      "path": "logs/mobilevit_s_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_BD_seed0",
+      "path": "checkpoints/mobilevit_s_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_BD_seed0",
+      "path": "predictions/mobilevit_s_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_BD_seed0",
+      "path": "logs/mobilevit_s_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_BD_seed1",
+      "path": "checkpoints/mobilevit_s_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_BD_seed1",
+      "path": "predictions/mobilevit_s_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_BD_seed1",
+      "path": "logs/mobilevit_s_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_BD_seed2",
+      "path": "checkpoints/mobilevit_s_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_BD_seed2",
+      "path": "predictions/mobilevit_s_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_BD_seed2",
+      "path": "logs/mobilevit_s_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_BD_seed3",
+      "path": "checkpoints/mobilevit_s_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_BD_seed3",
+      "path": "predictions/mobilevit_s_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_BD_seed3",
+      "path": "logs/mobilevit_s_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_mobilevit_s_BD_seed4",
+      "path": "checkpoints/mobilevit_s_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_mobilevit_s_BD_seed4",
+      "path": "predictions/mobilevit_s_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_mobilevit_s_BD_seed4",
+      "path": "logs/mobilevit_s_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_SLD_seed0",
+      "path": "checkpoints/efficientformer_l1_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_SLD_seed0",
+      "path": "predictions/efficientformer_l1_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_SLD_seed0",
+      "path": "logs/efficientformer_l1_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_SLD_seed1",
+      "path": "checkpoints/efficientformer_l1_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_SLD_seed1",
+      "path": "predictions/efficientformer_l1_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_SLD_seed1",
+      "path": "logs/efficientformer_l1_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_SLD_seed2",
+      "path": "checkpoints/efficientformer_l1_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_SLD_seed2",
+      "path": "predictions/efficientformer_l1_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_SLD_seed2",
+      "path": "logs/efficientformer_l1_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_SLD_seed3",
+      "path": "checkpoints/efficientformer_l1_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_SLD_seed3",
+      "path": "predictions/efficientformer_l1_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_SLD_seed3",
+      "path": "logs/efficientformer_l1_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_SLD_seed4",
+      "path": "checkpoints/efficientformer_l1_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_SLD_seed4",
+      "path": "predictions/efficientformer_l1_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_SLD_seed4",
+      "path": "logs/efficientformer_l1_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_DK_seed0",
+      "path": "checkpoints/efficientformer_l1_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_DK_seed0",
+      "path": "predictions/efficientformer_l1_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_DK_seed0",
+      "path": "logs/efficientformer_l1_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_DK_seed1",
+      "path": "checkpoints/efficientformer_l1_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_DK_seed1",
+      "path": "predictions/efficientformer_l1_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_DK_seed1",
+      "path": "logs/efficientformer_l1_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_DK_seed2",
+      "path": "checkpoints/efficientformer_l1_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_DK_seed2",
+      "path": "predictions/efficientformer_l1_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_DK_seed2",
+      "path": "logs/efficientformer_l1_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_DK_seed3",
+      "path": "checkpoints/efficientformer_l1_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_DK_seed3",
+      "path": "predictions/efficientformer_l1_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_DK_seed3",
+      "path": "logs/efficientformer_l1_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_DK_seed4",
+      "path": "checkpoints/efficientformer_l1_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_DK_seed4",
+      "path": "predictions/efficientformer_l1_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_DK_seed4",
+      "path": "logs/efficientformer_l1_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_BD_seed0",
+      "path": "checkpoints/efficientformer_l1_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_BD_seed0",
+      "path": "predictions/efficientformer_l1_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_BD_seed0",
+      "path": "logs/efficientformer_l1_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_BD_seed1",
+      "path": "checkpoints/efficientformer_l1_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_BD_seed1",
+      "path": "predictions/efficientformer_l1_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_BD_seed1",
+      "path": "logs/efficientformer_l1_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_BD_seed2",
+      "path": "checkpoints/efficientformer_l1_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_BD_seed2",
+      "path": "predictions/efficientformer_l1_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_BD_seed2",
+      "path": "logs/efficientformer_l1_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_BD_seed3",
+      "path": "checkpoints/efficientformer_l1_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_BD_seed3",
+      "path": "predictions/efficientformer_l1_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_BD_seed3",
+      "path": "logs/efficientformer_l1_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_efficientformer_l1_BD_seed4",
+      "path": "checkpoints/efficientformer_l1_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_efficientformer_l1_BD_seed4",
+      "path": "predictions/efficientformer_l1_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_efficientformer_l1_BD_seed4",
+      "path": "logs/efficientformer_l1_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_SLD_seed0",
+      "path": "checkpoints/fastvit_t12_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_SLD_seed0",
+      "path": "predictions/fastvit_t12_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_SLD_seed0",
+      "path": "logs/fastvit_t12_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_SLD_seed1",
+      "path": "checkpoints/fastvit_t12_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_SLD_seed1",
+      "path": "predictions/fastvit_t12_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_SLD_seed1",
+      "path": "logs/fastvit_t12_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_SLD_seed2",
+      "path": "checkpoints/fastvit_t12_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_SLD_seed2",
+      "path": "predictions/fastvit_t12_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_SLD_seed2",
+      "path": "logs/fastvit_t12_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_SLD_seed3",
+      "path": "checkpoints/fastvit_t12_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_SLD_seed3",
+      "path": "predictions/fastvit_t12_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_SLD_seed3",
+      "path": "logs/fastvit_t12_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_SLD_seed4",
+      "path": "checkpoints/fastvit_t12_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_SLD_seed4",
+      "path": "predictions/fastvit_t12_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_SLD_seed4",
+      "path": "logs/fastvit_t12_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_DK_seed0",
+      "path": "checkpoints/fastvit_t12_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_DK_seed0",
+      "path": "predictions/fastvit_t12_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_DK_seed0",
+      "path": "logs/fastvit_t12_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_DK_seed1",
+      "path": "checkpoints/fastvit_t12_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_DK_seed1",
+      "path": "predictions/fastvit_t12_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_DK_seed1",
+      "path": "logs/fastvit_t12_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_DK_seed2",
+      "path": "checkpoints/fastvit_t12_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_DK_seed2",
+      "path": "predictions/fastvit_t12_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_DK_seed2",
+      "path": "logs/fastvit_t12_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_DK_seed3",
+      "path": "checkpoints/fastvit_t12_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_DK_seed3",
+      "path": "predictions/fastvit_t12_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_DK_seed3",
+      "path": "logs/fastvit_t12_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_DK_seed4",
+      "path": "checkpoints/fastvit_t12_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_DK_seed4",
+      "path": "predictions/fastvit_t12_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_DK_seed4",
+      "path": "logs/fastvit_t12_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_BD_seed0",
+      "path": "checkpoints/fastvit_t12_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_BD_seed0",
+      "path": "predictions/fastvit_t12_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_BD_seed0",
+      "path": "logs/fastvit_t12_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_BD_seed1",
+      "path": "checkpoints/fastvit_t12_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_BD_seed1",
+      "path": "predictions/fastvit_t12_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_BD_seed1",
+      "path": "logs/fastvit_t12_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_BD_seed2",
+      "path": "checkpoints/fastvit_t12_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_BD_seed2",
+      "path": "predictions/fastvit_t12_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_BD_seed2",
+      "path": "logs/fastvit_t12_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_BD_seed3",
+      "path": "checkpoints/fastvit_t12_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_BD_seed3",
+      "path": "predictions/fastvit_t12_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_BD_seed3",
+      "path": "logs/fastvit_t12_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_fastvit_t12_BD_seed4",
+      "path": "checkpoints/fastvit_t12_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_fastvit_t12_BD_seed4",
+      "path": "predictions/fastvit_t12_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_fastvit_t12_BD_seed4",
+      "path": "logs/fastvit_t12_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_SLD_seed0",
+      "path": "checkpoints/coatnet_0_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_SLD_seed0",
+      "path": "predictions/coatnet_0_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_SLD_seed0",
+      "path": "logs/coatnet_0_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_SLD_seed1",
+      "path": "checkpoints/coatnet_0_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_SLD_seed1",
+      "path": "predictions/coatnet_0_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_SLD_seed1",
+      "path": "logs/coatnet_0_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_SLD_seed2",
+      "path": "checkpoints/coatnet_0_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_SLD_seed2",
+      "path": "predictions/coatnet_0_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_SLD_seed2",
+      "path": "logs/coatnet_0_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_SLD_seed3",
+      "path": "checkpoints/coatnet_0_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_SLD_seed3",
+      "path": "predictions/coatnet_0_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_SLD_seed3",
+      "path": "logs/coatnet_0_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_SLD_seed4",
+      "path": "checkpoints/coatnet_0_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_SLD_seed4",
+      "path": "predictions/coatnet_0_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_SLD_seed4",
+      "path": "logs/coatnet_0_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_DK_seed0",
+      "path": "checkpoints/coatnet_0_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_DK_seed0",
+      "path": "predictions/coatnet_0_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_DK_seed0",
+      "path": "logs/coatnet_0_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_DK_seed1",
+      "path": "checkpoints/coatnet_0_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_DK_seed1",
+      "path": "predictions/coatnet_0_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_DK_seed1",
+      "path": "logs/coatnet_0_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_DK_seed2",
+      "path": "checkpoints/coatnet_0_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_DK_seed2",
+      "path": "predictions/coatnet_0_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_DK_seed2",
+      "path": "logs/coatnet_0_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_DK_seed3",
+      "path": "checkpoints/coatnet_0_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_DK_seed3",
+      "path": "predictions/coatnet_0_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_DK_seed3",
+      "path": "logs/coatnet_0_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_DK_seed4",
+      "path": "checkpoints/coatnet_0_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_DK_seed4",
+      "path": "predictions/coatnet_0_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_DK_seed4",
+      "path": "logs/coatnet_0_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_BD_seed0",
+      "path": "checkpoints/coatnet_0_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_BD_seed0",
+      "path": "predictions/coatnet_0_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_BD_seed0",
+      "path": "logs/coatnet_0_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_BD_seed1",
+      "path": "checkpoints/coatnet_0_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_BD_seed1",
+      "path": "predictions/coatnet_0_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_BD_seed1",
+      "path": "logs/coatnet_0_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_BD_seed2",
+      "path": "checkpoints/coatnet_0_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_BD_seed2",
+      "path": "predictions/coatnet_0_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_BD_seed2",
+      "path": "logs/coatnet_0_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_BD_seed3",
+      "path": "checkpoints/coatnet_0_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_BD_seed3",
+      "path": "predictions/coatnet_0_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_BD_seed3",
+      "path": "logs/coatnet_0_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_coatnet_0_BD_seed4",
+      "path": "checkpoints/coatnet_0_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_coatnet_0_BD_seed4",
+      "path": "predictions/coatnet_0_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_coatnet_0_BD_seed4",
+      "path": "logs/coatnet_0_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_SLD_seed0",
+      "path": "checkpoints/rema_mobilevit_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_SLD_seed0",
+      "path": "predictions/rema_mobilevit_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_SLD_seed0",
+      "path": "logs/rema_mobilevit_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_SLD_seed1",
+      "path": "checkpoints/rema_mobilevit_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_SLD_seed1",
+      "path": "predictions/rema_mobilevit_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_SLD_seed1",
+      "path": "logs/rema_mobilevit_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_SLD_seed2",
+      "path": "checkpoints/rema_mobilevit_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_SLD_seed2",
+      "path": "predictions/rema_mobilevit_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_SLD_seed2",
+      "path": "logs/rema_mobilevit_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_SLD_seed3",
+      "path": "checkpoints/rema_mobilevit_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_SLD_seed3",
+      "path": "predictions/rema_mobilevit_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_SLD_seed3",
+      "path": "logs/rema_mobilevit_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_SLD_seed4",
+      "path": "checkpoints/rema_mobilevit_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_SLD_seed4",
+      "path": "predictions/rema_mobilevit_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_SLD_seed4",
+      "path": "logs/rema_mobilevit_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_DK_seed0",
+      "path": "checkpoints/rema_mobilevit_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_DK_seed0",
+      "path": "predictions/rema_mobilevit_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_DK_seed0",
+      "path": "logs/rema_mobilevit_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_DK_seed1",
+      "path": "checkpoints/rema_mobilevit_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_DK_seed1",
+      "path": "predictions/rema_mobilevit_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_DK_seed1",
+      "path": "logs/rema_mobilevit_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_DK_seed2",
+      "path": "checkpoints/rema_mobilevit_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_DK_seed2",
+      "path": "predictions/rema_mobilevit_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_DK_seed2",
+      "path": "logs/rema_mobilevit_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_DK_seed3",
+      "path": "checkpoints/rema_mobilevit_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_DK_seed3",
+      "path": "predictions/rema_mobilevit_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_DK_seed3",
+      "path": "logs/rema_mobilevit_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_DK_seed4",
+      "path": "checkpoints/rema_mobilevit_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_DK_seed4",
+      "path": "predictions/rema_mobilevit_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_DK_seed4",
+      "path": "logs/rema_mobilevit_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_BD_seed0",
+      "path": "checkpoints/rema_mobilevit_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_BD_seed0",
+      "path": "predictions/rema_mobilevit_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_BD_seed0",
+      "path": "logs/rema_mobilevit_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_BD_seed1",
+      "path": "checkpoints/rema_mobilevit_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_BD_seed1",
+      "path": "predictions/rema_mobilevit_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_BD_seed1",
+      "path": "logs/rema_mobilevit_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_BD_seed2",
+      "path": "checkpoints/rema_mobilevit_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_BD_seed2",
+      "path": "predictions/rema_mobilevit_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_BD_seed2",
+      "path": "logs/rema_mobilevit_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_BD_seed3",
+      "path": "checkpoints/rema_mobilevit_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_BD_seed3",
+      "path": "predictions/rema_mobilevit_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_BD_seed3",
+      "path": "logs/rema_mobilevit_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_rema_mobilevit_BD_seed4",
+      "path": "checkpoints/rema_mobilevit_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_rema_mobilevit_BD_seed4",
+      "path": "predictions/rema_mobilevit_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_rema_mobilevit_BD_seed4",
+      "path": "logs/rema_mobilevit_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_SLD_seed0",
+      "path": "checkpoints/dual_branch_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_SLD_seed0",
+      "path": "predictions/dual_branch_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_SLD_seed0",
+      "path": "logs/dual_branch_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_SLD_seed1",
+      "path": "checkpoints/dual_branch_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_SLD_seed1",
+      "path": "predictions/dual_branch_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_SLD_seed1",
+      "path": "logs/dual_branch_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_SLD_seed2",
+      "path": "checkpoints/dual_branch_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_SLD_seed2",
+      "path": "predictions/dual_branch_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_SLD_seed2",
+      "path": "logs/dual_branch_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_SLD_seed3",
+      "path": "checkpoints/dual_branch_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_SLD_seed3",
+      "path": "predictions/dual_branch_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_SLD_seed3",
+      "path": "logs/dual_branch_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_SLD_seed4",
+      "path": "checkpoints/dual_branch_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_SLD_seed4",
+      "path": "predictions/dual_branch_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_SLD_seed4",
+      "path": "logs/dual_branch_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_DK_seed0",
+      "path": "checkpoints/dual_branch_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_DK_seed0",
+      "path": "predictions/dual_branch_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_DK_seed0",
+      "path": "logs/dual_branch_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_DK_seed1",
+      "path": "checkpoints/dual_branch_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_DK_seed1",
+      "path": "predictions/dual_branch_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_DK_seed1",
+      "path": "logs/dual_branch_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_DK_seed2",
+      "path": "checkpoints/dual_branch_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_DK_seed2",
+      "path": "predictions/dual_branch_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_DK_seed2",
+      "path": "logs/dual_branch_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_DK_seed3",
+      "path": "checkpoints/dual_branch_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_DK_seed3",
+      "path": "predictions/dual_branch_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_DK_seed3",
+      "path": "logs/dual_branch_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_DK_seed4",
+      "path": "checkpoints/dual_branch_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_DK_seed4",
+      "path": "predictions/dual_branch_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_DK_seed4",
+      "path": "logs/dual_branch_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_BD_seed0",
+      "path": "checkpoints/dual_branch_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_BD_seed0",
+      "path": "predictions/dual_branch_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_BD_seed0",
+      "path": "logs/dual_branch_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_BD_seed1",
+      "path": "checkpoints/dual_branch_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_BD_seed1",
+      "path": "predictions/dual_branch_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_BD_seed1",
+      "path": "logs/dual_branch_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_BD_seed2",
+      "path": "checkpoints/dual_branch_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_BD_seed2",
+      "path": "predictions/dual_branch_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_BD_seed2",
+      "path": "logs/dual_branch_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_BD_seed3",
+      "path": "checkpoints/dual_branch_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_BD_seed3",
+      "path": "predictions/dual_branch_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_BD_seed3",
+      "path": "logs/dual_branch_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_dual_branch_BD_seed4",
+      "path": "checkpoints/dual_branch_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_dual_branch_BD_seed4",
+      "path": "predictions/dual_branch_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_dual_branch_BD_seed4",
+      "path": "logs/dual_branch_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_SLD_seed0",
+      "path": "checkpoints/leafaxis_net_SLD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_SLD_seed0",
+      "path": "predictions/leafaxis_net_SLD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_SLD_seed0",
+      "path": "logs/leafaxis_net_SLD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_SLD_seed1",
+      "path": "checkpoints/leafaxis_net_SLD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_SLD_seed1",
+      "path": "predictions/leafaxis_net_SLD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_SLD_seed1",
+      "path": "logs/leafaxis_net_SLD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_SLD_seed2",
+      "path": "checkpoints/leafaxis_net_SLD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_SLD_seed2",
+      "path": "predictions/leafaxis_net_SLD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_SLD_seed2",
+      "path": "logs/leafaxis_net_SLD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_SLD_seed3",
+      "path": "checkpoints/leafaxis_net_SLD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_SLD_seed3",
+      "path": "predictions/leafaxis_net_SLD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_SLD_seed3",
+      "path": "logs/leafaxis_net_SLD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_SLD_seed4",
+      "path": "checkpoints/leafaxis_net_SLD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_SLD_seed4",
+      "path": "predictions/leafaxis_net_SLD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_SLD_seed4",
+      "path": "logs/leafaxis_net_SLD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_DK_seed0",
+      "path": "checkpoints/leafaxis_net_DK_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_DK_seed0",
+      "path": "predictions/leafaxis_net_DK_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_DK_seed0",
+      "path": "logs/leafaxis_net_DK_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_DK_seed1",
+      "path": "checkpoints/leafaxis_net_DK_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_DK_seed1",
+      "path": "predictions/leafaxis_net_DK_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_DK_seed1",
+      "path": "logs/leafaxis_net_DK_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_DK_seed2",
+      "path": "checkpoints/leafaxis_net_DK_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_DK_seed2",
+      "path": "predictions/leafaxis_net_DK_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_DK_seed2",
+      "path": "logs/leafaxis_net_DK_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_DK_seed3",
+      "path": "checkpoints/leafaxis_net_DK_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_DK_seed3",
+      "path": "predictions/leafaxis_net_DK_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_DK_seed3",
+      "path": "logs/leafaxis_net_DK_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_DK_seed4",
+      "path": "checkpoints/leafaxis_net_DK_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_DK_seed4",
+      "path": "predictions/leafaxis_net_DK_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_DK_seed4",
+      "path": "logs/leafaxis_net_DK_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_BD_seed0",
+      "path": "checkpoints/leafaxis_net_BD_seed0.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_BD_seed0",
+      "path": "predictions/leafaxis_net_BD_seed0.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_BD_seed0",
+      "path": "logs/leafaxis_net_BD_seed0.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_BD_seed1",
+      "path": "checkpoints/leafaxis_net_BD_seed1.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_BD_seed1",
+      "path": "predictions/leafaxis_net_BD_seed1.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_BD_seed1",
+      "path": "logs/leafaxis_net_BD_seed1.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_BD_seed2",
+      "path": "checkpoints/leafaxis_net_BD_seed2.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_BD_seed2",
+      "path": "predictions/leafaxis_net_BD_seed2.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_BD_seed2",
+      "path": "logs/leafaxis_net_BD_seed2.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_BD_seed3",
+      "path": "checkpoints/leafaxis_net_BD_seed3.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_BD_seed3",
+      "path": "predictions/leafaxis_net_BD_seed3.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_BD_seed3",
+      "path": "logs/leafaxis_net_BD_seed3.jsonl",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "checkpoint_leafaxis_net_BD_seed4",
+      "path": "checkpoints/leafaxis_net_BD_seed4.pth",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "predictions_leafaxis_net_BD_seed4",
+      "path": "predictions/leafaxis_net_BD_seed4.npz",
+      "sha256": null,
+      "bytes": null
+    },
+    {
+      "id": "log_leafaxis_net_BD_seed4",
+      "path": "logs/leafaxis_net_BD_seed4.jsonl",
+      "sha256": null,
+      "bytes": null
+    }
+  ],
+  "missing_artifacts": []
+}

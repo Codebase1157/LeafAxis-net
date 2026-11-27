@@ -1,0 +1,11 @@
+# Training config: model=resnet50, dataset=SLD.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: SLD
+  num_classes: 11
+
+model:
+  arch: resnet50
+  pretrained: true

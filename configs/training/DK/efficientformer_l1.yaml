@@ -1,0 +1,11 @@
+# Training config: model=efficientformer_l1, dataset=DK.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: DK
+  num_classes: 5
+
+model:
+  arch: efficientformer_l1
+  pretrained: true

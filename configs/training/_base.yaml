@@ -1,0 +1,35 @@
+# Base training configuration for every sugarcane run.
+# Per-model / per-dataset configs override the fields they need and `include` this.
+
+data:
+  image_size: 224
+  batch_size: 64
+  num_workers: 8
+  manifest: ./manifests/main_manifest.csv
+
+optim:
+  name: adamw
+  lr: 2.0e-4
+  weight_decay: 0.05
+  betas: [0.9, 0.999]
+
+schedule:
+  epochs: 100
+  warmup_epochs: 5
+  cosine_eta_min: 1.0e-6
+
+augment:
+  random_resized_crop: [0.7, 1.0]
+  horizontal_flip: 0.5
+  color_jitter: [0.1, 0.1, 0.1]
+
+loss:
+  class_balanced_beta: 0.9999
+
+eval:
+  save_predictions: true
+  predictions_dir: ./predictions
+
+seeds: [0, 1, 2, 3, 4]
+
+pretrained_checkpoint: ./checkpoints/plantvillage_leafaxis.pth

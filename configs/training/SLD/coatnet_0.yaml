@@ -1,0 +1,11 @@
+# Training config: model=coatnet_0, dataset=SLD.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: SLD
+  num_classes: 11
+
+model:
+  arch: coatnet_0
+  pretrained: true

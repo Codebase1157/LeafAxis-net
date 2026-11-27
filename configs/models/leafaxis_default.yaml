@@ -1,0 +1,12 @@
+# LeafAxis-Net architecture configuration (default width).
+num_classes: 11
+dims: [96, 192, 384, 768]
+depths_cnn: [2, 2, 6, 2]
+depths_vit: [0, 2, 6, 2]
+num_heads: [0, 4, 8, 16]
+mlp_ratio: 4.0
+keep_ratio_stage3: 0.7
+drop: 0.0
+use_maab: true
+use_cbf: true
+use_lsts: true

@@ -1,0 +1,11 @@
+# Training config: model=vit_b_16, dataset=DK.
+# Inherits defaults from configs/training/_base.yaml.
+include: ../_base.yaml
+
+data:
+  dataset: DK
+  num_classes: 5
+
+model:
+  arch: vit_b_16
+  pretrained: true
